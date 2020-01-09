@@ -1,0 +1,185 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: Arial, sans-serif;
+}
+
+/*-----------------------------------------------------------------------*/
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: black;
+    z-index: 1;
+}
+
+.logo{
+    width: 3%;
+}
+
+.menu{
+    display: none;
+}
+
+.menu:hover{
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    z-index: 2;
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+nav ul li{
+    list-style: none;
+    z-index: 3;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 4;
+}
+
+/*-----------------------------------------------------------------------*/
+.main_top{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.main_top:after {
+    background-color: white;
+    display: block;
+    content: "";
+    height: 2px;
+    width: 0%;
+    -webkit-transition: width .3s ease-in-out;
+    -moz-transition: width .3s ease-in-out;
+    transition: width .3s ease-in-out;
+}
+
+.main_top:hover:after,
+.main_top:focus:after {
+    width: 100%;
+}
+/*-----------------------------------------------------------------------*/
+
+section{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+
+section .content{
+    text-align: center;
+}
+
+section .content h2{
+    font-size: 14vw;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: 1em;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-attachment: fixed;
+}
+
+section .about h2{
+    background-image: url("../img/ny-day.png");
+    background-position: center;
+}
+
+section .content p{
+    font-size: 18px;
+    text-align: justify;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px;
+}
+
+/*-----------------------------------------------------------------------*/
+
+footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: black;
+}
+
+footer .footer-links .links{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+/*-----------------------------------------------------------------------*/
+
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+
+    .menu{
+        display: block;
+        width: 3%;
+        cursor: pointer;
+    }
+
+    .nav-links{
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 35%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-active{
+        transform: translateX(0%);
+    }
+}
+
+/*-----------------------------------------------------------------------*/
+
+@media screen and (max-width: 1024px){
+    nav{
+        width: 100%;
+    }
+}
+
+/*-----------------------------------------------------------------------*/
