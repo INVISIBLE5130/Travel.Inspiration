@@ -329,6 +329,7 @@ footer .footer-links .links{
     }
 
     .nav-links{
+        overflow-x: hidden;
         position: absolute;
         right: 0;
         height: 92vh;
